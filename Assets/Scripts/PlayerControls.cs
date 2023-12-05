@@ -34,7 +34,7 @@ public class PlayerControls : MonoBehaviour
 
         scoreText.text = "Score:" + Mathf.Round(topScore).ToString();
 
-        movement = Input.GetAxis("Horizontal") * movementSpeed;
+        movement = Input.GetAxis("Horizontal") * -movementSpeed;
 
         if (movement < 0)
         {

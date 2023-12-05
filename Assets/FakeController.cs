@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class FakeController : MonoBehaviour
 {
     [Header("Game Over UI Canvas Object")]
     public GameObject gameOverCanvas;
-
-    [Header("Platform Objects")]
+    [Header("Platform Object")]
     public GameObject platform;
-    public GameObject fakePlatform;
 
     float pos = 0;
 
@@ -35,17 +33,7 @@ public class GameController : MonoBehaviour
 
     void SpawnPlatforms()
     {
-        int coin = Random.Range( 0, 10);
-        
-        if (coin <= 8)
-        {
-            Instantiate(platform, new Vector3(Random.value * 10 - 5f, pos, -6f), Quaternion.identity);
-        }
-        else if(coin >= 2)
-        {
-            Instantiate(fakePlatform, new Vector3(Random.value * 10 - 5f, pos, -6f), Quaternion.identity);
-        }
-        
+        Instantiate(platform, new Vector3(Random.value * 10 - 5f, pos, -6f), Quaternion.identity);
         pos += 2.5f;
     }
 }
